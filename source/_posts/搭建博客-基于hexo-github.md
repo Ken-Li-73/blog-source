@@ -31,7 +31,7 @@ date: 2021-11-10 18:50:11
 
 如果进不去[github](https://www.github.com/)的官网，则在本地hosts的文件(C:\Windows\System32\drivers\etc)添加:
 
-```
+```js
 //这个ip可能会变化
 140.82.114.4 github.com
 185.199.108.153 assets-cdn.github.com
@@ -65,7 +65,7 @@ date: 2021-11-10 18:50:11
 
 在git bash 里面输入 ssh-keygen -t rsa,**并敲四次回车**
 
-```
+```bash
 ssh-keygen -t rsa
 ```
 
@@ -188,7 +188,7 @@ hexo s
 ![](ssh-setup13.jpg)
 在MyBlog 文件夹中，右键打开 Git Bash，安装Git部署插件
 
-```
+```bash
 npm install hexo-deployer-git --save
 ```
 
@@ -204,10 +204,8 @@ hexo d       #部署到github上的仓库
 
 hexo d 是上传到github上，如果你频繁的修改文件，或者只想暂时查看一下布局，可以选择：
 
-```
-hexo clean   
-hexo g       
-hexo s       
+```bash
+hexo clean&&hexo g&&hexo s       
 ```
 
 通过http://localhost:4000 在本地查看

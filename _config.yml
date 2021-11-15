@@ -5,7 +5,7 @@
 # Site
 title: 半日浮生
 subtitle: ''
-description: ''
+description: Later Is Never
 keywords:
 author: 小懒虫
 language: zh-CN
@@ -99,6 +99,58 @@ include:
 exclude:
 ignore:
 
+#Nofollow
+nofollow:
+  enable: true   #启用插件
+  field: site     #post 处理文章内容，post 处理全站所有文件
+  exclude:      #白名单(比如友链)
+    - 'exclude1.com'
+    - 'exclude2.com'
+
+live2d:
+  enable: true
+  scriptFrom: local
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
+  pluginModelPath: assets/
+  model:
+    
+    use: live2d-widget-model-tororo
+  display:
+    # 设置模型的位置
+    position: right
+    width: 120
+    height: 240
+  mobile:
+    show: true
+  react:
+    opacityDefault: 1
+    opacityOnHover: 1
+
+# hexo-neat
+# 博文压缩
+neat_enable: true
+# 压缩html
+neat_html:
+  enable: true
+  exclude:
+# 压缩css
+neat_css:
+  enable: true
+  exclude:
+    - '**/*.min.css'
+# 压缩js
+neat_js:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '**/*.min.js'
+    - '**/jquery.fancybox.pack.js'
+    - '**/index.js'
+
+    
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/

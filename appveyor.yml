@@ -14,7 +14,11 @@ install:
     #######其他插件#########
     - npm install hexo-asset-image --save
     - npm install hexo-abbrlink --save
-    
+    - npm i hexo-filter-nofollow --save
+    - npm install hexo-helper-live2d --save
+    - npm install live2d-widget-model-tororo
+    - npm install hexo-generator-search
+
 
     #######################
     - npm ls --depth 0  #检查安装的插件
