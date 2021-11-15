@@ -18,6 +18,8 @@ install:
     - npm install hexo-helper-live2d --save
     - npm install live2d-widget-model-tororo
     - npm install hexo-generator-search
+    - npm uninstall hexo-generator-index --save
+    - npm install hexo-generator-index-pin-top --save
 
 
     #######################
