@@ -12,15 +12,20 @@ install:
     - npm install hexo-deployer-git --save
     - npm install hexo-generator-archive --save
     #######其他插件#########
+    - npm install hexo-theme-next   # 下载最新版本的next主题
+    - npm install hexo-abbrlink --save # 编写永久链接
+    - npm install hexo-generator-searchdb --save  #本地搜索
+    - npm install hexo-neat --save  # 静态压缩
+
     - npm install hexo-asset-image --save
-    - npm install hexo-abbrlink --save
-    - npm i hexo-filter-nofollow --save
+    - npm i hexo-filter-nofollow --save    # 防跟随
     - npm install hexo-helper-live2d --save
     - npm install live2d-widget-model-tororo
-    - npm install hexo-generator-search
     - npm uninstall hexo-generator-index --save
-    - npm install hexo-generator-index-pin-top --save
-
+    - npm install hexo-generator-index-pin-top --save  #置顶
+    - npm install hexo-generator-sitemap --save #谷歌检索
+    - npm install hexo-generator-baidu-sitemap --save #百度检索
+    - npm install hexo-word-counter   #统计文章字数
 
     #######################
     - npm ls --depth 0  #检查安装的插件

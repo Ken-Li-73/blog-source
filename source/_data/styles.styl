@@ -1,6 +1,6 @@
 // 添加背景图片
 body {
-      background: url(/images/background.jpg);//自己喜欢的图片地址
+      background: url(/uploads/background.jpg);//自己喜欢的图片地址
       background-size: cover;
       background-repeat: no-repeat;
       background-attachment: fixed;
@@ -24,14 +24,46 @@ body {
 }
 
 
+//文章样式
+.post-body {
+
+    //宽屏模式下字体太大了，改回mediun   
+    +desktop-large() {
+        font-size: $font-size-medium;
+    }
+
+    //文章内用H2做一级标题，加下横线  
+    h2 {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+    }
+    
+    //文章内用H3做二级标题，加大字号  
+    h3 {
+        font-size: 1.2em;
+    }
+
+    //文章图片说明
+    .image-caption {
+        font-size: 0.5em;
+        font-weight: normal;
+        margin: -10px auto 15px
+    }
+}
+
+
+
+
+
 // 修改菜单栏透明度
 .header-inner {
-  opacity: 0.8;
+    background: rgba(230,230,230,0.9) none repeat scroll !important;
+    z-index: 9999;
 }
 
 
 // Custom styles.
-.code {
+code {
     color: #ff7600;
     background: #fbf7f8;
     margin: 2px;
@@ -57,3 +89,26 @@ body {
     background: rgba(255,255,255,0.7) none repeat scroll !important;
 }
 
+
+
+//文章内图片样式
+.post-body img {
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    padding: 0px;
+    border-radius: 5px;
+    box-shadow: 4px 4px 4px 0px #ddd;
+}
+
+
+
+//版权声明样式
+.post-copyright ul{
+    background: rgba(230,230,230,0.7) none repeat scroll !important;
+}
+
+
+//底部上下篇导航留空
+.post-nav-item {
+    padding: 10px 0px 10px 0px
+}
