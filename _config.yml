@@ -131,7 +131,7 @@ live2d:
   pluginModelPath: assets/
   model:
     
-    use: live2d-widget-model-tororo
+    use: live2d-widget-model-wanko
   display:
     # 设置模型的位置
     position: right

@@ -9,25 +9,29 @@ categories:
   - hexo
   - 搭建博客
 comments: true
-keywords:
-  - nodejs
-  - git
-  - hexo
 abbrlink: 29cff741
 date: 2021-11-10 18:50:11
 ---
 
 自己搭建一个博客，可以锻炼自己的能力， 也可以去记录一下自己的心得。本文是将资源托管于github仓库，基于hexo搭建的，下面是我自己记录的搭建过程。
 
-我使用的软件及版本如下：
-
-- node  V16.13.0
-
-- git     Version 2.33.1.windows.1
+1. git的安装和使用
+2. nodejs的安装和使用
+3. hexo的安装和使用
 
 <!-- more -->
 
-### 1.注册一个gitHub的账号
+我使用的软件及版本如下：
+
+```yml
+git: 2.33.1.windows.1
+node: 16.13.0
+hexo: 5.4.0
+```
+
+## git的安装和使用
+
+### 注册账号
 
 如果进不去[github](https://www.github.com/)的官网，则在本地hosts的文件(C:\Windows\System32\drivers\etc)添加:
 
@@ -41,7 +45,7 @@ date: 2021-11-10 18:50:11
 * host的文件修改需要权限
 * [IPAddress.com](https://www.ipaddress.com/)网站,查询上面三个地址ip
 
-### 2.安装git。
+### 安装git。
 
 下载网址：https://git-scm.com/
 
@@ -59,7 +63,7 @@ date: 2021-11-10 18:50:11
 
 ![](git_version.jpg)
 
-### 3.绑定SSH
+### 绑定SSH
 
 通过ssh协议生成公钥，将github和本地连接起来，完成后可以在本地通过gi命令上传文件
 
@@ -112,16 +116,20 @@ ssh-keygen -t rsa
 
 ![](ssh-setup11.jpg)
 
-### 4.安装[node.js](https://nodejs.org/en/)
+此时已经将本地文件夹和远程仓库绑定了。
 
-测试是否安装完成
+## 安装[node.js](https://nodejs.org/en/)
+
+### 测试安装
+
+从[node.js](https://nodejs.org/en/)官方下载安装，在`cmd`中检查是否安装成功
 
 ```cmd
 node -v 
 npm -v
 ```
 
-#### 配置npm在安装全局模块时的路径和缓存cache的路径
+### 配置路径
 
 因为在执行例如npm install webpack -g等命令全局安装的时候，默认会将模块安装在C:\Users\用户名\AppData\Roaming路径下的npm和npm_cache中，不方便管理且占用C盘空间，所以这里配置自定义的全局模块安装目录，在node.js安装目录下新建两个文件夹 node_global和node_cache，然后在cmd命令下执行如下两个命令：
 ![](ssh-setup12.jpg)
@@ -131,7 +139,7 @@ npm config set prefix "F:\Program Files\nodejs\node_global"
 npm config set cache "F:\Program Files\nodejs\node_cache"
 ```
 
-#### 配置环境变量
+### 配置环境变量
 
 在系统变量中新建一个变量名为 “NODE_PATH”
 ![](ssh-setup12.jpg)
@@ -140,9 +148,7 @@ npm config set cache "F:\Program Files\nodejs\node_cache"
 
 ![](ssh-setup13.jpg)
 
-
-
-### 5.下载 webpack 
+### 测试npm模块
 
 在cmd中执行
 
@@ -152,7 +158,9 @@ npm install webpack -g
 
 执行 npm webpack -v，查看webpack是否安装成功，
 
-### 6.安装Hexo
+## Hexo安装和使用
+
+### 下载hexo
 
 点开MyBlog 文件夹，鼠标右键打开 Git Bush Here，输入：
 
@@ -160,21 +168,21 @@ npm install webpack -g
 npm install webpack -g
 ```
 
-初始化博客：
+### 初始化hexo
 
-```git bash
+```bash
 hexo init
 ```
 
-在本地静态部署：
+### 本地静态部署
 
-```
-hexo g
+```bash
+hexo g 	#生成网站静态文件
 ```
 
 在本地查看：
 
-```
+```bash
 hexo s
 ```
 
@@ -186,13 +194,16 @@ hexo s
 
 并在底部写上如下代码，需要把原来的deploy删除，另外冒号后面要有空格
 ![](ssh-setup13.jpg)
-在MyBlog 文件夹中，右键打开 Git Bash，安装Git部署插件
+
+### 安装Git部署插件
+
+单平台部署可以不安装
 
 ```bash
 npm install hexo-deployer-git --save
 ```
 
-生成静态网页，并提交到github上
+### 提交到github
 
 ```
 hexo clean   #清除缓存文件和已生成的静态文件
@@ -220,7 +231,5 @@ hexo clean&&hexo g&&hexo s
 ### 参考：
 
 [配置nodejs教程](https://blog.csdn.net/antma/article/details/86104068)
-
-如果想要详细配置可以参考这篇文章：
 
 [从零开始搭建个人博客（超详细）](https://zhuanlan.zhihu.com/p/102592286)
