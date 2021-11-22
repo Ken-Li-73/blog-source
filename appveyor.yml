@@ -17,7 +17,8 @@ install:
     - npm install hexo-generator-searchdb --save  #本地搜索
     - npm install hexo-neat --save  # 静态压缩
     - npm install hexo-filter-nofollow --save    # 防跟随
-    - npm install hexo-renderer-marked    # 加载图片
+    - npm install hexo-image-link --save
+    #- npm install hexo-renderer-marked    # 加载图片
     - npm uninstall hexo-generator-index --save
     - npm install hexo-generator-index-pin-top --save  #置顶
 
