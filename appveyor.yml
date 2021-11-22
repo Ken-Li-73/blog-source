@@ -9,8 +9,8 @@ install:
     - npm --version
     - npm install
     - npm install hexo-cli -g
-    - npm install hexo-deployer-git --save
-    - npm install hexo-generator-archive --save
+    - npm install hexo-deployer-git --save  #可以多平台部署网页
+    - npm install hexo-generator-archive --save #存档生成器
     #######其他插件#########
     - npm install hexo-theme-next   # 下载最新版本的next主题
     - npm install hexo-abbrlink --save # 编写永久链接
@@ -18,14 +18,14 @@ install:
     - npm install hexo-neat --save  # 静态压缩
     - npm install hexo-filter-nofollow --save    # 防跟随
     - npm uninstall hexo-asset-image --save     #在高版本的hexo加载图片出现问题
-    #- npm install hexo-image-link --save
-    - npm install hexo-renderer-marked    # 加载图片
+    - npm install hexo-renderer-marked --save  # 加载图片
 
     - npm uninstall hexo-generator-index --save
     - npm install hexo-generator-index-pin-top --save  #置顶
 
     - npm install hexo-helper-live2d --save     #宠物
-    - npm install live2d-widget-model-tororo
+    - npm install live2d-widget-model-wanko
+
     - npm install hexo-generator-sitemap --save #谷歌检索
     - npm install hexo-generator-baidu-sitemap --save #百度检索
     - npm install hexo-word-counter   #统计文章字数
